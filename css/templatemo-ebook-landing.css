@@ -940,6 +940,7 @@ strong {
 }
 
 .contact-section .copyright-text {
+  margin-top: 20px;
   font-size: var(--copyright-font-size);
 }
 
