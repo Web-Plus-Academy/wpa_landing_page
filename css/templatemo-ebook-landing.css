@@ -1203,6 +1203,7 @@ strong {
   }
 
   .custom-block {
+    height: 100%;
     font-size: 10px;
     width: 100%;
   }
@@ -1226,7 +1227,9 @@ strong {
  }
 
  .custom-block-image-wrap{
-  padding: 10px;
+  width: 8rem;
+  height: 5rem;
+  padding: 5px;
  }
 
  .review_container{
