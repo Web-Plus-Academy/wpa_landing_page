@@ -173,6 +173,12 @@ strong {
   left: -40px;
 }
 
+.avatar-image:hover {
+  transition: 1s;
+  bottom: 0; /* Adjust this value as needed */
+  transform: scale(1.5); /* Optional: Adds a slight zoom effect on hover */
+}
+
 .avatar-group,
 .reviews-group {
   position: relative;
@@ -519,6 +525,11 @@ strong {
   color: var(--primary-color);
 }
 
+.nav-link:hover {
+  transform: scale(1.1);
+  transition: 0.5s ease-out;
+}
+  
 .navbar-toggler {
   border: 0;
   padding: 0;
@@ -615,13 +626,33 @@ strong {
   top: 100px;
 }
 
+@keyframes heroImageLoad {
+  from {
+    bottom: -100px; 
+    opacity: 0; 
+  }
+  to {
+    bottom: 100px; 
+    opacity: 1; 
+  }
+}
+
 .hero-image {
   position: relative;
   z-index: 2;
   bottom: 100px;
   display: block;
   margin: auto;
+  animation: heroImageLoad 1s ease-in-out forwards;
 }
+
+
+.hero-image:hover{
+  transition: 1s;
+  bottom: 0; /* Adjust this value as needed */
+  transform: scale(1.1); /* Optional: Adds a slight zoom effect on hover */
+}
+
 
 @media screen and (min-width: 991px) {
   .hero-section {
@@ -663,6 +694,7 @@ strong {
  }
 
 .custom-block {
+  height: 500px;
   width: 25rem;
   position: relative;
   border-radius: var(--border-radius-medium);
@@ -720,12 +752,15 @@ strong {
 }
 
 .custom-block-image-wrap {
+  margin: 0 auto;
+  width: 20rem;
+  height: 7rem;
   background-color: rgba(231, 111, 81, 0.85);
   border-radius: 0 0 var(--border-radius-medium) var(--border-radius-medium);
   position: relative;
   z-index: 2;
   overflow: hidden;
-  margin: auto;
+  /* margin: auto; */
   padding: 25px 45px;
 }
 
@@ -756,6 +791,20 @@ strong {
   padding-right: 40px;
   padding-left: 40px;
 }
+
+.tablet_img {
+  transition: transform 1s ease-in-out;
+  will-change: transform;
+}
+
+.zoom-in {
+  transform: scale(1.1); /* Zoom in effect */
+}
+
+.zoom-out {
+  transform: scale(1); /* Zoom out effect */
+}
+
 
 .nav-pills {
   border: 2px solid var(--primary-color);
