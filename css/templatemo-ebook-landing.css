@@ -439,6 +439,15 @@ strong {
   transform: translate3d(0, 100%, 0);
 }
 
+@media screen and (max-width: 480px) {
+  .down-btn{
+    margin-bottom: 20px;
+  }
+  .meet-founder{
+    margin-left: 15px;
+  }
+}
+
 
 /*---------------------------------------
   NAVIGATION              
