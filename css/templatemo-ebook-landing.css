@@ -970,7 +970,7 @@ p.text-muted {
   .left-content, .right-content {
     width: 100%; /* Full width for smaller screens */
     flex: none;
-    padding: 10px;
+    padding: 20px 6px;
   }
 
   .service-list img, .underDev img {
@@ -997,6 +997,11 @@ p.text-muted {
 }
 
 @media (max-width: 480px) {
+
+  .what-we-do-section .container{
+    margin: 0;
+    padding: 0;
+  }
 
   .service-list a{
     width: 6rem;
@@ -1035,6 +1040,7 @@ p.text-muted {
   .service-list{
     max-width: 100%;
     flex-direction: row;
+    justify-content: space-around;
   }
 
   .service-list img, .underDev img {
@@ -1976,7 +1982,7 @@ p.text-muted {
   }
 
   .navbar-brand {
-    height: 2.8rem;
+    height: 2.5rem;
   }
 
   .navbar-brand-icon {
@@ -1994,6 +2000,5 @@ p.text-muted {
     font-size: 12px;
     padding: 5px 15px;
   }
-
 }
 
