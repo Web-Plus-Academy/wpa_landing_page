@@ -6,12 +6,14 @@ const images = [
   '../images/slider/3.png',
   '../images/slider/4.png',
   '../images/slider/5.png',
+  '../images/slider/6.png',
 ];
 
 const mobileImages = [
   '../images/slider/m1.png',
   '../images/slider/m2.png',
-  '../images/slider/m3.png'
+  '../images/slider/m3.png',
+  '../images/slider/m4.png'
 ];
 
 let index = 0;
