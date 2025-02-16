@@ -136,7 +136,7 @@ strong {
 -----------------------------------------*/
 .section-padding {
   padding-top: 100px;
-  padding-bottom: 100px;
+  /* padding-bottom: 100px; */
 }
 
 ::selection {
@@ -226,6 +226,10 @@ strong {
 .review_container::-webkit-scrollbar-thumb:hover {
   background: orange; /* Color on hover */
   transition: 3s ease;
+}
+
+.reviews-section {
+  margin-bottom: 100px;
 }
 
 /*---------------------------------------
@@ -714,6 +718,223 @@ strong {
     width: 100%;
   }
 }
+
+/* ------ Slider---------- */
+
+
+.highlates {
+  margin: auto;
+  height: 70vh;
+  width: 80vh;
+  /* width: 65%; */
+  background: #000000f8;
+  /* height: fit-content; */
+  border-radius: 30px 0;
+  box-shadow: var(--shadow-4);
+  padding-bottom: 10px;
+}
+
+.roles_club {
+  background: white;
+  width: 80%;
+  grid-area: right-middle;
+  height: fit-content;
+  border-radius: 10px;
+  margin:10%;
+}
+
+
+
+/* .coordinators , .events{
+  grid-area: right-bottom;
+  border: 2px solid white;
+  margin-top:5% ;
+  background-color: #fff;
+  box-shadow: var(--shadow-4);
+  border-radius: 20px 0;
+  display: inline-block;
+  width: 50%;
+  padding: 5px;
+} */
+
+/* Members Section */
+.members {
+  /* margin-top: 4%; */
+  text-align: center;
+  width: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); 
+  grid-auto-rows: auto;
+  gap: 10px; 
+  transition: 1s;
+  padding: 50px; 
+  border-radius: 15px; 
+  background-color: #f0eff5;
+  box-shadow: rgba(129, 129, 129, 0.64) 0px 8px 24px;
+}
+
+.members > div {
+  color: var(--black-chocolate);
+  width: 90%;
+  height: auto;
+  text-align: center;
+  padding: 5px; /* Reduce the padding */
+  border-radius: 10px;
+  background-color: #e7e6edb9;
+  box-shadow: rgba(0, 90, 255, 0.34) 0px 8px 24px;
+  transition: 0.5s;
+}
+
+.members > div:hover {
+  background: linear-gradient(#6045ea, #8567f7);
+  color: white;
+  transition: 0.2s;
+  border-radius: 15px; /* Make the corners a bit rounder */
+  box-shadow: rgba(10, 10, 10, 0.34) 0px 8px 24px;
+}
+
+.members img {
+  display: block;
+  margin: 0 auto;
+  margin-top: 10px; /* Adjust the spacing */
+  margin-bottom: 15px; /* Adjust the spacing */
+  width: 80px; /* Adjust the size */
+  height: 80px; /* Adjust the size */
+  border-radius: 50%;
+  transition: 0.5s;
+  box-shadow: 2px 2px 5px gray;
+  border: 1px solid;
+}
+
+.members img:hover {
+  transform: scale(1.2);
+  box-shadow: rgba(10, 10, 10, 0.34) 0px 8px 24px;
+  background-color: black;
+}
+
+
+
+.icons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    width: 100%;
+    transition: 0.5s;
+}
+
+.icons > i {
+    color: rgb(0, 8, 255);
+    transition: 0.5s;
+    transform: scale(1.2);
+}
+
+.icons > a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    transition: 0.5s;
+}
+
+.icons > a:hover {
+    color: white;
+    transform: scale(1.2);
+}
+
+.icons > i:hover {
+    color: white;
+    transition: 0.3s;
+    transform: scale(1.6);
+}
+
+.members h4 {
+    margin-top: 1px;
+    font-size: 15px;
+}
+
+
+/* Slideshow container */
+.slideshow-container {
+  width: 80vh;
+  position: relative;
+  margin: 0;
+  padding: 20px;
+  border-bottom: 3px solid orange;
+  
+}
+
+/* Hide the images by default */
+.mySlides img{
+
+  border-radius: 20px;
+  box-shadow: 4px 4px 10px orange;
+
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  box-shadow: var(--shadow-1);
+  background-color: white;
+}
+.prev{
+  left: 0;
+  
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  color: rgb(255, 255, 255);
+  background-color: rgba(0,0,0,0.8);
+}
+
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: white;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.dots .active, .dot:hover {
+  background-color: orange;
+}
+
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 3s;
+}
+
+/* Fading animation */
+@keyframes fade {
+  from {opacity: 0.6}
+  to {opacity: 1}
+}
+
 
 /*---------------------------------------
   FEATURED              
@@ -1206,10 +1427,17 @@ p.text-muted {
 /*---------------------------------------
   THE BOOK SECTION            
 -----------------------------------------*/
+
 .book-section-info {
-  padding-top: 40px;
-  padding-right: 40px;
-  padding-left: 40px;
+  display: flex;
+  width: 85vw;
+  margin-bottom: 100px;
+}
+
+.Aboutus{
+  /* border: 5px solid green; */
+  margin-top: 10px;
+  margin-left: 30px;
 }
 
 .tablet_img {
@@ -1338,6 +1566,36 @@ p.text-muted {
 .sub-head b{
   color: #ff9f87;
   text-shadow: 1px 1px black;
+}
+
+@media screen and (max-width: 500px) {
+
+  .abus{
+    display: flex;
+    justify-content: center;
+  }
+  .book-section-info {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    padding-top: 0;
+  }
+
+  .slideshow-container{
+    width: 100%;
+  }
+
+  .highlates{
+    width: 100%;
+    height: auto;
+  }
+  .Aboutus{
+    margin: 20px 0;
+  }
+  .Aboutus p {
+    /* border:  2px solid green; */
+    font-size: 0.7rem;
+  }
 }
 /* --------------cursor---------------------------- */
 .text-container {
@@ -1879,7 +2137,7 @@ p.text-muted {
 
   .section-padding {
     padding-top: 50px;
-    padding-bottom: 50px;
+    /* padding-bottom: 50px; */
   }
   
   .navbar {
@@ -1903,11 +2161,11 @@ p.text-muted {
   }
 
 
-  .book-section-info {
+  /* .book-section-info {
     padding-top: 20px;
     padding-right: 20px;
     padding-left: 20px;
-  }
+  } */
 
   .ebook-download-form {
     padding: 30px;
