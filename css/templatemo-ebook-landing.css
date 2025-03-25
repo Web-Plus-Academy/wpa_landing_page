@@ -1593,6 +1593,20 @@ p.text-muted {
   max-width: 15rem;
 }
 
+.register_link{
+  font-size: 20px;
+  font-weight: bold;
+  color: blue;
+  text-decoration: underline;
+}
+
+.register_link:hover{
+  font-size: 23px;
+  font-weight: bold;
+  color: rgb(17, 255, 0);
+  text-decoration: underline;
+}
+
 .report_content{
   line-height: 50px;
 }
