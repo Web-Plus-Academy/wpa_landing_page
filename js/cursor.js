@@ -1,6 +1,14 @@
 const textElement = document.getElementById("animated-text");
 
-const texts = [" FSD-Courses ", " Website Services... ", " Innovation Projects! "];
+const texts = [
+  " #SWPA the Open source ",
+  " Peer-to-Peer Training ",
+  " Live Projects ",
+  " All-Domain Skill Programs ",
+  " Student-led Innovation ",
+  " Affordable Education "
+];
+
 let textIndex = 0;
 let charIndex = 0;
 let isDeleting = false;

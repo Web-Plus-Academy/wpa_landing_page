@@ -158,20 +158,10 @@ strong {
 
 .avatar-image-left {
   position: relative;
-  left: -10px;
+  /* left: -10px; */
 }
 
-.avatar-image-left + .avatar-image-left {
-  left: -20px;
-}
 
-.avatar-image-left + .avatar-image-left + .avatar-image-left {
-  left: -30px;
-}
-
-.avatar-image-left + .avatar-image-left + .avatar-image-left + .avatar-image-left {
-  left: -40px;
-}
 
 .avatar-image:hover {
   transition: 1s;
@@ -640,7 +630,8 @@ strong {
   HERO        
 -----------------------------------------*/
 .hero-section {
-  background-image: url('../images/businessman-sitting-by-table-cafe.jpg');
+  /* background-image: url('../images/businessman-sitting-by-table-cafe.jpg'); */
+  background-image: url('../images/bg.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -649,6 +640,12 @@ strong {
   filter: brightness(0.9); /* Slightly dulls the background */
   position: relative;
   z-index: 1; /* Lower than hero-image */
+}
+
+@media screen and (max-width: 980px) {
+  .hero-section {
+    background-image: url('../images/bgmbl.jpg');
+  }
 }
 
 .hero-section::after {
