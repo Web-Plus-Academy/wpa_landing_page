@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <title>AI / ML</title>
+    <title>Web Dev</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../from.css" />
     <!-- SweetAlert CDN -->
@@ -40,16 +40,16 @@
             <!-- Page 1: Course Details -->
             <div class="form-slide active" id="page1">
                 <h2>New-Gen Courses</h2>
-                <h3 style="font-size: 2.5rem" class="heading">AI / ML Beginners</h3>
+                <h3 style="font-size: 2.5rem" class="heading">Static Web-Dev</h3>
                 <h4><b>Duration:</b> 1 month</h4>
                 <h3><b>Fee:</b> ₹399</h3>
                 <br />
                 <div class="course-section">
                     <h4>About the Program:</h4>
                     <p>
-                        Unlock the future with Artificial Intelligence and Machine Learning—two of the most
-                        transformative technologies of the 21st century. This course offers a comprehensive introduction
-                        to AI and ML, equipping you with both theoretical understanding and practical skills.
+                        Step into the world of web development by mastering HTML and CSS—the foundational building
+                        blocks of the internet. This course provides a hands-on introduction to designing beautiful,
+                        responsive websites from scratch, empowering you with essential front-end development skills.
                     </p>
                 </div>
                 <br />
@@ -185,7 +185,7 @@
 
                     const formData = new FormData(form);
 
-                    formData.append("Course", "MLpart1 - New Gen");
+                    formData.append("Course", "Web - New Gen");
 
                     // Submit to Google Sheets
                     fetch(scriptURL, { method: "POST", body: formData })

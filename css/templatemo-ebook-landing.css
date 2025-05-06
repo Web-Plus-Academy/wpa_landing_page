@@ -1116,98 +1116,135 @@ p.text-muted {
   border: 2px solid black;
 } */
 
-.events{
+
+/* ------event css------ */
+
+/* Section heading */
+#event h4 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #e65100;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/* Container for event cards */
+.event-cards {
   display: flex;
-  justify-content: center;
-  gap: 50px;
   flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 40px 20px;
+  background: #fff;
 }
 
-.event-table {
+/* Individual event card */
+.event-card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.621);
+  padding: 24px;
+  width: 350px;
+  text-align: center;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
   position: relative;
-  z-index: 1;
-  /* padding: 40px 10px;  */
-  width: 30vw;
-  margin-top: 30px;
-  margin-bottom: 50px;
-  /* margin: 20px auto; */
-  border-collapse: collapse;
-  font-family: 'Outfit', sans-serif; /* Custom font for elegance */
-  background-color: #f9f9f9;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  overflow: hidden; /* Ensures rounded corners apply to the entire table */
+  overflow: hidden;
 }
 
-.table-header {
-  background-color: #4caf50; /* Green background for header */
-  color: white;
-  text-align: left;
-  border-bottom: 3px solid black;
+/* Shine effect on hover */
+.event-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  transform: rotate(25deg);
+  opacity: 0;
+  pointer-events: none;
 }
 
-.table-heading {
-  padding: 10px;
-  font-size: 1rem;
-  font-weight: bold;
+.event-card:hover::before {
+  left: 150%;
+  top: 150%;
+  opacity: 1;
 }
 
-.table-row:nth-child(odd) {
-  background-color: #ffffff; /* Alternating row color */
+/* Card hover transform */
+.event-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
-.table-row:nth-child(even) {
-  background-color: #f2f2f2; /* Alternating row color */
+/* Title inside the card */
+.event-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #bf360c;
+  margin-bottom: 10px;
 }
 
-.table-row:hover {
-  background-color: #d4edda; /* Highlight on hover */
-  transition: background-color 0.3s ease;
+/* Date inside the card */
+.event-date {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 18px;
 }
 
-.table-data {
-  padding: 10px;
-  font-size: 0.8rem;
-  color: #333333; /* Neutral text color */
-  border-bottom: 1px solid #ddd;
-  position: relative;
-}
-
-.table-data:last-child {
-  border-bottom: none; /* Removes border for last row */
-}
-
-.table-data a {
+/* Register button */
+.event-link {
   display: inline-block;
+  padding: 10px 20px;
+  background: linear-gradient(to right, #ff6f00, #ff8f00);
+  color: white;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  border-radius: 25px;
+  box-shadow: 0 4px 12px rgba(255, 111, 0, 0.3);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.event-link:hover {
+  background: linear-gradient(to right, #ff8f00, #ff6f00);
+  transform: scale(1.05);
+  color: black;
+}
+
+/* Hide button for schedule-only cards */
+.schedule .event-link {
+  display: none;
+}
+
+/* Sticker Style */
+.sticker {
+  position: absolute;
+  top: 20px;
+  left: -48px;
+  background: linear-gradient(135deg, #ff6f00, #ff8f00);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 6px 50px;
+  transform: rotate(-45deg);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
   z-index: 10;
-  font-weight: bold;
-  color: blue;
-  text-decoration: underline;
-  cursor: pointer;
-}
-
-.table-data a:hover{
-  transform: scale(1.2);
+  pointer-events: none;
 }
 
 
+/* Mobile responsiveness */
 @media (max-width: 768px) {
-  .event-table {
-    font-size: 0.9rem; /* Adjust font size for smaller screens */
-    width: 80%;
-    box-shadow: 2px 2px 3px grey;
-    margin: 20px;
+  .event-card {
+      width: 90%;
   }
-  .events{
-    gap: 0;
+  .event-title{
+    font-size: 1rem;
   }
-  .avatar-group{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10px;
-    gap: 0;
+
+  #event h4 {
+      font-size: 1.6rem;
   }
 }
 
