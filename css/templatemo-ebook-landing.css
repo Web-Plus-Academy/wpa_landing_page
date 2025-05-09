@@ -337,7 +337,7 @@ strong {
   position: relative;
   z-index: 1;
   overflow: hidden;
-  -webkit-backface-visibility: hidden;
+  /* -webkit-backface-visibility: hidden; */
   -webkit-transition: background-color 0.3s;
   transition: background-color 0.3s;
 }
@@ -361,7 +361,7 @@ strong {
 
 .btn-naira > span {
   display: block;
-  vertical-align: middle;
+  /* vertical-align: middle; */
 }
 
 .btn-naira .btn-icon {
