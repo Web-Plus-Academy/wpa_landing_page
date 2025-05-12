@@ -40,7 +40,7 @@
       .popular-courses::after {
         content: "";
         display: block;
-        width: 60px;
+        width: 50%;
         height: 4px;
         background-color: #3b82f6; /* blue-500 */
         margin: 0.5rem auto 0 auto;
