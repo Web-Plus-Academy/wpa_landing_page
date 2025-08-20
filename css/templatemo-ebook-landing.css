@@ -804,6 +804,15 @@ strong {
   padding: 3rem 2rem;
 }
 
+.courses-grid1 {
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 3rem 2rem;
+}
+
 .course-card {
   background: linear-gradient(145deg, #ffffff, #f0f0f0);
   border-radius: 1.5rem;
