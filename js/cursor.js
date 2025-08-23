@@ -3,7 +3,7 @@ const textElement = document.getElementById("animated-text");
 const texts = [
   " #SWPA the Open source ",
   " Peer-to-Peer Training ",
-  " Live Projects ",
+  " Entrepreneurship Program ",
   " All-Domain Skill Programs ",
   " Student-led Innovation ",
   " Affordable Education "
