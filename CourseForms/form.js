@@ -15,29 +15,29 @@ function showPage(pageNumber) {
 function validatePage1() {
     const checkbox = document.getElementById("agreeCheckbox");
     const errorMsg = document.getElementById("checkboxError");
-  
+
     if (!checkbox || !checkbox.checked) {
-      checkbox.classList.add("glow");
-      errorMsg.textContent = "Please agree to continue.";
-      return false;
+        checkbox.classList.add("glow");
+        errorMsg.textContent = "Please agree to continue.";
+        return false;
     }
-  
+
     checkbox.classList.remove("glow");
     errorMsg.textContent = "";
     return true;
-  }
-  
-  function clearCheckboxError() {
+}
+
+function clearCheckboxError() {
     const checkbox = document.getElementById("agreeCheckbox");
     const errorMsg = document.getElementById("checkboxError");
     if (checkbox.checked) {
-      checkbox.classList.remove("glow");
-      errorMsg.textContent = "";
+        checkbox.classList.remove("glow");
+        errorMsg.textContent = "";
     }
-  }
-  
+}
 
-  function validatePage2() {
+
+function validatePage2() {
     const inputs = document.querySelectorAll('#page2 input');
     let allFilled = true;
     for (let input of inputs) {
@@ -173,18 +173,18 @@ const emailError = document.getElementById("emailError");
 emailInput.addEventListener("blur", validateEmail);
 
 function validateEmail() {
-  const emailValue = emailInput.value.trim();
-  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const emailValue = emailInput.value.trim();
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-  if (!emailPattern.test(emailValue)) {
-    emailError.textContent = "Please enter a valid email address.";
-    emailError.style.display = "block";
-    emailInput.style.borderColor = "red";
-  } else {
-    emailError.textContent = "";
-    emailError.style.display = "none";
-    emailInput.style.borderColor = "#4f46e5";
-  }
+    if (!emailPattern.test(emailValue)) {
+        emailError.textContent = "Please enter a valid email address.";
+        emailError.style.display = "block";
+        emailInput.style.borderColor = "red";
+    } else {
+        emailError.textContent = "";
+        emailError.style.display = "none";
+        emailInput.style.borderColor = "#4f46e5";
+    }
 }
 
 const phoneInput = document.getElementById("phone");
@@ -193,16 +193,16 @@ const phoneError = document.getElementById("phoneError");
 phoneInput.addEventListener("blur", validatePhone);
 
 function validatePhone() {
-  const phoneValue = phoneInput.value.trim();
-  const phonePattern = /^[6-9]\d{9}$/; // Starts with 6,7,8,9 and has total 10 digits
+    const phoneValue = phoneInput.value.trim();
+    const phonePattern = /^[6-9]\d{9}$/; // Starts with 6,7,8,9 and has total 10 digits
 
-  if (!phonePattern.test(phoneValue)) {
-    phoneError.textContent = "Please enter a valid 10-digit Indian phone number.";
-    phoneError.style.display = "block";
-    phoneInput.style.borderColor = "red";
-  } else {
-    phoneError.textContent = "";
-    phoneError.style.display = "none";
-    phoneInput.style.borderColor = "#4f46e5";
-  }
+    if (!phonePattern.test(phoneValue)) {
+        phoneError.textContent = "Please enter a valid 10-digit Indian phone number.";
+        phoneError.style.display = "block";
+        phoneInput.style.borderColor = "red";
+    } else {
+        phoneError.textContent = "";
+        phoneError.style.display = "none";
+        phoneInput.style.borderColor = "#4f46e5";
+    }
 }

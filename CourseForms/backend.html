@@ -1,294 +1,242 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Backend Dev</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./from.css" />
-    <!-- SweetAlert CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  </head>
-  <body>
-    <div class="form-container">
-      <div class="step-progressbar">
-        <div class="step active" id="step1">
-          <div class="circle">1</div>
-          <p>Course</p>
-        </div>
-        <div class="line"></div>
-        <div class="step" id="step2">
-          <div class="circle">2</div>
-          <p>Personal</p>
-        </div>
-        <div class="line"></div>
-        <div class="step" id="step3">
-          <div class="circle">3</div>
-          <p>Academics</p>
-        </div>
-        <div class="line"></div>
-        <div class="step" id="step4">
-          <div class="circle">4</div>
-          <p>Payment</p>
-        </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Backend Dev</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./from.css" />
+  <!-- SweetAlert CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+  <div class="form-container">
+    <div class="step-progressbar">
+      <div class="step active" id="step1">
+        <div class="circle">1</div>
+        <p>Course</p>
       </div>
-
-      <form id="enrollmentForm">
-        <input
-          type="hidden"
-          name="access_key"
-          value="00aaf7dc-f3d2-401f-b5b6-6837dbe00c8b"
-        />
-
-        <!-- Page 1: Course Details -->
-        <div class="form-slide active" id="page1">
-          <h2>Course Details</h2>
-          <h3 class="heading">Backend Development</h3>
-          <h4><b>Duration:</b> 6 weeks</h4>
-          <h3>
-            <b>Fee:</b> ₹18,000
-          </h3>
-          <br />
-          <div class="course-section">
-            <h4>About the Program:</h4>
-            <p>
-              Our Backend Development Program teaches you how to build robust,
-              scalable, and secure web applications from the server side. Learn
-              to create powerful APIs, manage databases, and handle user
-              authentication — everything needed to make a website work like
-              magic.
-            </p>
-          </div>
-          <br />
-          <div id="checkboxContainer">
-            <input
-              type="checkbox"
-              id="agreeCheckbox"
-              onchange="clearCheckboxError()"
-            />
-            <label style="color: gold; font-weight: bold" for="agreeCheckbox"
-              >I have My Own Laptop or PC</label
-            >
-            <div id="checkboxError" class="error-message"></div>
-          </div>
-
-          <div class="button-group">
-            <span></span>
-            <button type="button" id="nextBtn" onclick="nextPage()">
-              Next
-            </button>
-          </div>
-        </div>
-
-        <!-- Page 2: Personal Details -->
-        <div class="form-slide" id="page2">
-          <h2>Personal Details</h2>
-
-          <label for="name">Full Name <span style="color: red">*</span></label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            placeholder="Full Name"
-            required
-          />
-
-          <div class="form-group">
-            <label for="email">Email <span style="color: red">*</span></label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="Enter your email"
-              required
-            />
-            <small id="emailError" class="error-message"></small>
-          </div>
-
-          <div class="form-group">
-            <label for="phone"
-              >Phone Number <span style="color: red">*</span></label
-            >
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              placeholder="Phone Number"
-              required
-            />
-            <small id="phoneError" class="error-message"></small>
-          </div>
-
-          <div class="button-group">
-            <button type="button" onclick="prevPage()">Back</button>
-            <button type="button" id="next2Btn" onclick="nextPage()" disabled>
-              Next
-            </button>
-          </div>
-        </div>
-
-        <!-- Page 3: Academic Details -->
-        <div class="form-slide" id="page3">
-          <h2>Academic Details</h2>
-
-          <label for="year">Year <span style="color: red">*</span></label>
-          <select id="year" name="year" required>
-            <option value="">-- Select Year --</option>
-            <option value="1">1st Year</option>
-            <option value="2">2nd Year</option>
-            <option value="3">3rd Year</option>
-            <option value="4">4th Year</option>
-            <option value="others">others</option>
-          </select>
-
-          <label for="department"
-            >Department <span style="color: red">*</span></label
-          >
-          <input
-            type="text"
-            id="department"
-            name="department"
-            placeholder="Department"
-            required
-          />
-
-          <label for="college"
-            >College Name <span style="color: red">*</span></label
-          >
-          <input
-            type="text"
-            id="college"
-            name="college"
-            placeholder="College Name"
-            required
-          />
-
-          <div class="button-group">
-            <button type="button" onclick="prevPage()">Back</button>
-            <button type="button" id="next3Btn" onclick="nextPage()" disabled>
-              Next
-            </button>
-          </div>
-        </div>
-
-        <!-- Page 4: Payment -->
-        <div class="form-slide" id="page4">
-          <h2>Payment & Submit</h2>
-
-          <!-- Scan & Pay Image -->
-          <div class="scan-pay-container">
-            <img
-              src="./payment.jpg"
-              alt="Scan & Pay QR Code"
-              class="scan-pay-img"
-            />
-            <p class="scan-pay-text">
-              Scan the QR code above to make your payment.
-            </p>
-            <p>Registration FEE ₹500 (inc. GST)</p>
-          </div>
-
-          <input
-            type="text"
-            name="paymentId"
-            placeholder="Payment Transaction ID"
-            required
-          />
-
-          <div class="button-group">
-            <button type="button" onclick="prevPage()">Back</button>
-            <button type="submit">Submit</button>
-          </div>
-        </div>
-      </form>
-      <div id="loaderOverlay" style="display: none">
-        <div class="loader-backdrop">
-          <div class="loader-content">
-            <img src="./Animation - 1745420242293.gif" alt="Loading..." />
-            <p>Please wait...</p>
-          </div>
-        </div>
+      <div class="line"></div>
+      <div class="step" id="step2">
+        <div class="circle">2</div>
+        <p>Personal</p>
+      </div>
+      <div class="line"></div>
+      <div class="step" id="step3">
+        <div class="circle">3</div>
+        <p>Academics</p>
+      </div>
+      <div class="line"></div>
+      <div class="step" id="step4">
+        <div class="circle">4</div>
+        <p>Payment</p>
       </div>
     </div>
 
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <form id="enrollmentForm">
+      <input type="hidden" name="access_key" value="00aaf7dc-f3d2-401f-b5b6-6837dbe00c8b" />
 
-    <script src="./form.js"></script>
+      <!-- Page 1: Course Details -->
+      <div class="form-slide active" id="page1">
+        <h2>Course Details</h2>
+        <h3 class="heading">Backend Development</h3>
+        <h4><b>Duration:</b> 6 weeks</h4>
+        <h3>
+          <b>Fee:</b> ₹18,000
+        </h3>
+        <br />
+        <div class="course-section">
+          <h4>About the Program:</h4>
+          <p>
+            Our Backend Development Program teaches you how to build robust,
+            scalable, and secure web applications from the server side. Learn
+            to create powerful APIs, manage databases, and handle user
+            authentication — everything needed to make a website work like
+            magic.
+          </p>
+        </div>
+        <br />
+        <div id="checkboxContainer">
+          <input type="checkbox" id="agreeCheckbox" onchange="clearCheckboxError()" />
+          <label style="color: gold; font-weight: bold" for="agreeCheckbox">I have My Own Laptop or PC</label>
+          <div id="checkboxError" class="error-message"></div>
+        </div>
 
-    <script>
-      const scriptURL =
-        "https://script.google.com/macros/s/AKfycbzJfbD_tG01h-4lPUwXDdY85mwaLak_JifnQ2l--KMvj35QofHk0tbphnEqAYt48c2Sfg/exec";
-      const web3FormsURL = "https://api.web3forms.com/submit";
+        <div class="button-group">
+          <span></span>
+          <button type="button" id="nextBtn" onclick="nextPage()">
+            Next
+          </button>
+        </div>
+      </div>
 
-      const form = document.getElementById("enrollmentForm");
-      const loaderOverlay = document.getElementById("loaderOverlay");
+      <!-- Page 2: Personal Details -->
+      <div class="form-slide" id="page2">
+        <h2>Personal Details</h2>
 
-      form.addEventListener("submit", function (e) {
-        e.preventDefault();
+        <label for="name">Full Name <span style="color: red">*</span></label>
+        <input type="text" id="name" name="name" placeholder="Full Name" required />
 
-        if (!validatePage4()) return;
+        <div class="form-group">
+          <label for="email">Email <span style="color: red">*</span></label>
+          <input type="email" id="email" name="email" placeholder="Enter your email" required />
+          <small id="emailError" class="error-message"></small>
+        </div>
 
-        Swal.fire({
-          title: "Are you sure?",
-          text: "Do you want to submit the form?",
-          icon: "question",
-          showCancelButton: true,
-          confirmButtonColor: "#3085d6",
-          cancelButtonColor: "#d33",
-          confirmButtonText: "Yes, submit it!",
-        }).then((result) => {
-          if (result.isConfirmed) {
-            loaderOverlay.style.display = "block";
+        <div class="form-group">
+          <label for="phone">Phone Number <span style="color: red">*</span></label>
+          <input type="tel" id="phone" name="phone" placeholder="Phone Number" required />
+          <small id="phoneError" class="error-message"></small>
+        </div>
 
-            const formData = new FormData(form);
+        <div class="button-group">
+          <button type="button" onclick="prevPage()">Back</button>
+          <button type="button" id="next2Btn" onclick="nextPage()" disabled>
+            Next
+          </button>
+        </div>
+      </div>
 
-            formData.append("Course", "Backend Development");
+      <!-- Page 3: Academic Details -->
+      <div class="form-slide" id="page3">
+        <h2>Academic Details</h2>
 
-            // Submit to Google Sheets
-            fetch(scriptURL, { method: "POST", body: formData })
-              .then((response) => {
-                console.log("Google Sheets: Success");
-              })
-              .catch((error) => {
-                console.error("Google Sheets Error:", error);
-              });
+        <label for="year">Year <span style="color: red">*</span></label>
+        <select id="year" name="year" required>
+          <option value="">-- Select Year --</option>
+          <option value="1">1st Year</option>
+          <option value="2">2nd Year</option>
+          <option value="3">3rd Year</option>
+          <option value="4">4th Year</option>
+          <option value="others">others</option>
+        </select>
 
-            // Submit to Web3Forms
-            fetch(web3FormsURL, { method: "POST", body: formData })
-              .then((response) => response.json())
-              .then((data) => {
-                loaderOverlay.style.display = "none";
+        <label for="department">Department <span style="color: red">*</span></label>
+        <input type="text" id="department" name="department" placeholder="Department" required />
 
-                if (data.success) {
-                  Swal.fire({
-                    title: "Thanks for Enrolling!",
-                    text: "Our team will contact you soon.",
-                    icon: "success",
-                    confirmButtonText: "OK",
-                  });
+        <label for="college">College Name <span style="color: red">*</span></label>
+        <input type="text" id="college" name="college" placeholder="College Name" required />
 
-                  form.reset();
-                  currentPage = 1;
-                  showPage(currentPage);
-                  document.getElementById("nextBtn").disabled = true;
-                } else {
-                  Swal.fire(
-                    "Mail Error",
-                    data.message || "Please try again.",
-                    "error"
-                  );
-                }
-              })
-              .catch((error) => {
-                loaderOverlay.style.display = "none";
+        <div class="button-group">
+          <button type="button" onclick="prevPage()">Back</button>
+          <button type="button" id="next3Btn" onclick="nextPage()" disabled>
+            Next
+          </button>
+        </div>
+      </div>
+
+      <!-- Page 4: Payment -->
+      <div class="form-slide" id="page4">
+        <h2>Payment & Submit</h2>
+
+        <!-- Scan & Pay Image -->
+        <div class="scan-pay-container">
+          <img src="./1000.jpg" alt="Scan & Pay QR Code" class="scan-pay-img" />
+          <p class="scan-pay-text">
+            Scan the QR code above to make your payment.
+          </p>
+          <p>Registration FEE ₹1000(inc. GST)</p>
+        </div>
+
+        <input type="text" name="paymentId" placeholder="Payment Transaction ID" required />
+
+        <div class="button-group">
+          <button type="button" onclick="prevPage()">Back</button>
+          <button type="submit">Submit</button>
+        </div>
+      </div>
+    </form>
+    <div id="loaderOverlay" style="display: none">
+      <div class="loader-backdrop">
+        <div class="loader-content">
+          <img src="./Animation - 1745420242293.gif" alt="Loading..." />
+          <p>Please wait...</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+  <script src="./form.js"></script>
+
+  <script>
+    const scriptURL =
+      "https://script.google.com/macros/s/AKfycbzJfbD_tG01h-4lPUwXDdY85mwaLak_JifnQ2l--KMvj35QofHk0tbphnEqAYt48c2Sfg/exec";
+    const web3FormsURL = "https://api.web3forms.com/submit";
+
+    const form = document.getElementById("enrollmentForm");
+    const loaderOverlay = document.getElementById("loaderOverlay");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      if (!validatePage4()) return;
+
+      Swal.fire({
+        title: "Are you sure?",
+        text: "Do you want to submit the form?",
+        icon: "question",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, submit it!",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          loaderOverlay.style.display = "block";
+
+          const formData = new FormData(form);
+
+          formData.append("Course", "Backend Development");
+
+          // Submit to Google Sheets
+          fetch(scriptURL, { method: "POST", body: formData })
+            .then((response) => {
+              console.log("Google Sheets: Success");
+            })
+            .catch((error) => {
+              console.error("Google Sheets Error:", error);
+            });
+
+          // Submit to Web3Forms
+          fetch(web3FormsURL, { method: "POST", body: formData })
+            .then((response) => response.json())
+            .then((data) => {
+              loaderOverlay.style.display = "none";
+
+              if (data.success) {
+                Swal.fire({
+                  title: "Thanks for Enrolling!",
+                  text: "Our team will contact you soon.",
+                  icon: "success",
+                  confirmButtonText: "OK",
+                });
+
+                form.reset();
+                currentPage = 1;
+                showPage(currentPage);
+                document.getElementById("nextBtn").disabled = true;
+              } else {
                 Swal.fire(
                   "Mail Error",
-                  "Something went wrong. Please try again.",
+                  data.message || "Please try again.",
                   "error"
                 );
-              });
-          }
-        });
+              }
+            })
+            .catch((error) => {
+              loaderOverlay.style.display = "none";
+              Swal.fire(
+                "Mail Error",
+                "Something went wrong. Please try again.",
+                "error"
+              );
+            });
+        }
       });
-    </script>
-  </body>
+    });
+  </script>
+</body>
+
 </html>
