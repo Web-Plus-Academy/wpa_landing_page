@@ -811,6 +811,7 @@ strong {
   align-items: center;
   gap: 2rem;
   padding: 3rem 2rem;
+  flex-wrap: wrap;
 }
 
 .course-card {
@@ -856,7 +857,7 @@ strong {
 .course-card ul {
   list-style: none;
   padding: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 0;
 }
 
 .course-card ul li {
@@ -919,6 +920,9 @@ strong {
 
 /* Responsive tweaks */
 @media (max-width: 600px) {
+  .course-card{
+    height: auto !important;
+  }
   .courses-grid {
     padding: 2rem 1rem;
   }
@@ -928,7 +932,7 @@ strong {
   }
   
   .course-card h3 {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
   }
   
   .know-more-btn {
@@ -939,7 +943,7 @@ strong {
 
 
 /* Responsive tweaks */
-@media (max-width: 600px) {
+/* @media (max-width: 600px) {
   .courses-grid {
     padding: 1rem 1rem;
   }
@@ -956,7 +960,7 @@ strong {
     padding: 0.7rem 1.4rem;
     font-size: 0.9rem;
   }
-}
+} */
 
 
 @media (max-width: 800px) {
